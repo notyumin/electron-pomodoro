@@ -2,11 +2,19 @@
 
 A simple Pomodoro App made in Electron, using the menubar library.
 
-Features:
-- Work/Rest cycle
+# Installation
+```
+git clone https://github.com/notyumin/electron-pomodoro
+cd electron-pomodoro
+npm i
+npm run make
+```
+
+# Features
+- Auto toggle through Work/Rest cycle
 - Edit the times as you please
 - Alert when time is up
-- View time left as icon in menu bar
+- Time is displayed as icon in menu bar
 
-Todo:
+# Todo:
 - Long break after a few short breaks
