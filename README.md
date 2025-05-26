@@ -1,5 +1,6 @@
 # Electron Pomodoro
 
+![Demo Image of Pomodoro Timer](./menubar_pomodoro.png)
 A simple Pomodoro App made in Electron, using the menubar library.
 
 # Installation
