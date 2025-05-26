@@ -1,6 +1,9 @@
 const { contextBridge, ipcRenderer } = require('electron');
 
 contextBridge.exposeInMainWorld('electronAPI', {
-  updateTrayIcon: (text) => ipcRenderer.send('update-tray-icon', text)
+  updateTrayIcon: (arrayBuffer) => {
+    const nodeBuffer = Buffer.from(arrayBuffer)
+    ipcRenderer.send('update-tray-icon', nodeBuffer)
+  }
 });
 

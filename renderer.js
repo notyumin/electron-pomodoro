@@ -25,7 +25,7 @@ window.addEventListener('DOMContentLoaded', () => {
     time = formatTime(seconds)
     timer_minutes.value = time.mins;
     timer_seconds.value = time.secs;
-    window.electronAPI.updateTrayIcon(`${timer_minutes.value}:${timer_seconds.value}`)
+    updateTrayIcon(`${timer_minutes.value}:${timer_seconds.value}`)
   }
 
   function toggleTimer() {
@@ -114,3 +114,37 @@ window.addEventListener('DOMContentLoaded', () => {
   timer_minutes.addEventListener("focusout", updateTime)
   timer_seconds.addEventListener("focusout", updateTime)
 });
+
+//Canvas stuff
+// Function to generate tray icon from text
+function updateTrayIcon(text) {
+  const size = 32;
+  const scaleFactor = 4;
+  const canvas = document.createElement('canvas');
+  canvas.width = size * scaleFactor;
+  canvas.height = size * scaleFactor;
+  const ctx = canvas.getContext('2d');
+
+  ctx.scale(scaleFactor, scaleFactor);
+
+  // Clear transparent background
+  ctx.clearRect(0, 0, size, size);
+
+  // Draw centered text
+  ctx.font = 'bold 12px Sans';
+  ctx.fillStyle = 'white';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText(text, size / 2, size / 2);
+
+  // Convert to PNG buffer and send to main
+  canvas.toBlob(blob => {
+    const reader = new FileReader();
+    reader.onload = function() {
+      const arrayBuffer = this.result;
+      window.electronAPI.updateTrayIcon(arrayBuffer);
+    };
+    reader.readAsArrayBuffer(blob);
+  }, 'image/png');
+}
+
