@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="tabs">
+      <button id="btn_work" class="btn_work active_tab">Work</button>
+      <button id="btn_break" class="btn_break">Break</button>
+    </div>
+    <span class="timer">
+      <input id="timer_minutes" type="text" value="25" maxlength="2"/>:<input id="timer_seconds" type="text" value="00" maxlength="2"/>
+    </span>
+    <div>
+      <button id="btn_start">⏯︎</button>
+    </div>
+    <script src="renderer.js"></script>
+  </body>
+</html>
+<!-- 
+  TODO:
+Move the underline according to active task
+-->
+

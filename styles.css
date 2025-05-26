@@ -1,0 +1,86 @@
+/* Palette
+ * https://colorhunt.co/palette/faf6e3d8dbbdb59f782a3663
+ * #FAF6E3
+ * #D8DBBD
+ * #B59F78
+ * #2A3663
+ */
+
+body {
+  background-color: #FAF6E3;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  margin: 0;
+}
+
+.timer {
+  font-size: 110px;
+  margin: 0;
+  display: flex;
+  justify-content: start;
+  color: #B59F78;
+  margin-top: 15px;
+}
+
+input {
+  color: #B59F78;
+  background-color: #FAF6E3;
+  border: None;
+  text-align: center;
+  font-size: 110px;
+  width: 125px;
+}
+
+input:focus {
+  outline: none;
+}
+
+#btn_start {
+  border: None;
+  background-color: #FAF6E3;
+  color: #B59F78;
+  font-size: 60px;
+  padding: 0px;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+.tabs {
+  width: 100%;
+  display:flex;
+  justify-content: space-evenly;
+  border: none;
+}
+
+.btn_work, .btn_break {
+  font-size: 30px;
+  width: 50%;
+  color: #B59F78;
+  background-color: #FAF6E3;
+  padding: 10px;
+  border: none;
+}
+
+.active_tab {
+  border-bottom: solid 2px #B59F78;
+}
+
+#btn_work:hover, #btn_break:hover {
+  background-color: #f2eeda;
+}
+
+*:disabled {
+  opacity: 60%;;
+}
