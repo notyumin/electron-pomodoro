@@ -131,7 +131,7 @@ function updateTrayIcon(text) {
   ctx.clearRect(0, 0, size, size);
 
   // Draw centered text
-  ctx.font = 'bold 12px Sans';
+  ctx.font = '10px Monospace';
   ctx.fillStyle = 'white';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
