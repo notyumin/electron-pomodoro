@@ -8,8 +8,9 @@ const mb = menubar({
     height: 280,
     webPreferences: {
       contextIsolation: true,
-      preload: path.join(__dirname, 'preload.js')
-    }
+      preload: path.join(__dirname, 'preload.js'),
+      backgroundThrottling: false,
+    },
   },
 });
 
