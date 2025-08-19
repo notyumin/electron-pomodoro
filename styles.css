@@ -34,6 +34,11 @@ input {
   width: 125px;
 }
 
+*::selection {
+  color: #FAF6E3;
+  background-color: #B59F78;
+}
+
 input:focus {
   outline: none;
 }
